@@ -40,8 +40,8 @@ public class WhitelistPlugin extends JavaPlugin implements Listener {
         }
         Bukkit.getPluginManager().registerEvents(this, this);
 
-        PluginCommand wlist = getCommand("wlist");
-        wlist.setExecutor((sender, command, label, args) -> {
+        PluginCommand cmd = getCommand("wlist");
+        cmd.setExecutor((sender, command, label, args) -> {
             if (args.length != 0) {
                 switch (args[0].toLowerCase()) {
                     case "add":
@@ -131,7 +131,7 @@ public class WhitelistPlugin extends JavaPlugin implements Listener {
             sender.sendMessage("§c/" + label + " <add;remove;list;info;enable;disable> ...");
             return true;
         });
-        wlist.setTabCompleter((sender, command, label, args) -> {
+        cmd.setTabCompleter((sender, command, label, args) -> {
             List<String> list = new ArrayList<>();
             if (args.length == 1) {
                 list.add("add");
