@@ -1,0 +1,6 @@
+main: at.lorenz.whitelist.WhitelistPlugin
+name: SmartWhitelist
+version: 1.0
+commands:
+  wlist:
+    permission: wlist
